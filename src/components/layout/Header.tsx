@@ -61,6 +61,9 @@ export function Header() {
           <Link to="/contact" className="text-sm font-medium transition-colors hover:text-purple-600">
             Contact
           </Link>
+          <Link to="/dashboard" className="text-sm font-medium transition-colors hover:text-purple-600">
+            Dashboard
+          </Link>
         </nav>
         
         <div className="flex items-center gap-4">

@@ -151,6 +151,15 @@ export function ResultsViewer() {
               )}
               Excel
             </Button>
+            <Button 
+              variant="outline" 
+              size="sm" 
+              onClick={() => window.open(result.url, "_blank")}
+              className="border-purple-200 text-purple-700 hover:bg-purple-50"
+            >
+              <ExternalLink className="h-4 w-4 mr-1" />
+              View Source
+            </Button>
           </div>
         </CardTitle>
       </CardHeader>

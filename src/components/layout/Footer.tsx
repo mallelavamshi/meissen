@@ -95,7 +95,7 @@ export function Footer() {
         
         <div className="mt-8 border-t pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} ImageInsight. All rights reserved.
+            &copy; {new Date().getFullYear()} ImageInsight. All rights reserved. Designed for estate sale companies and auction houses.
           </p>
           <div className="mt-4 md:mt-0">
             <p className="text-xs text-muted-foreground">

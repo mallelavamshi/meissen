@@ -18,6 +18,7 @@ interface UserState {
   logout: () => void;
   updateUsage: (images: number) => void;
   resetUsage: () => void;
+  updateSubscription: (subscription: string) => void;
   updateUser: (userData: Partial<User>) => void;
 }
 
@@ -75,6 +76,18 @@ export const useUserStore = create<UserState>()(
           user: {
             ...user,
             ...userData
+          }
+        });
+      },
+      
+      updateSubscription: (subscription: string) => {
+        const { user } = get();
+        if (!user) return;
+
+        set({
+          user: {
+            ...user,
+            subscription
           }
         });
       }
