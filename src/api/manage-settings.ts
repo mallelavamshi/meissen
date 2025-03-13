@@ -1,9 +1,9 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { fine } from "@/lib/fine";
+import { FineClient } from "@fine-dev/fine-js";
 
-export const fine: FineClient = new FineClient({
-  apiUrl: import.meta.env.VITE_FINE_API_URL || "https://api.fine.dev",
-  apiKey: import.meta.env.VITE_FINE_API_KEY || "",
+const fine = new FineClient({
+  apiUrl: process.env.VITE_FINE_API_URL || "https://api.fine.dev",
+  apiKey: process.env.VITE_FINE_API_KEY || "",
 });
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -18,7 +18,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const response = await fine.functions.invoke("manage-settings", {
+    const response = await fine.invoke("manage-settings", {
       action,
       adminId,
       settings,
