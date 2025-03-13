@@ -40,7 +40,6 @@ createRoot(document.getElementById("root")!).render(
               <Route path="/signup" element={<SignupPage />} />
               <Route path="/logout" element={<LogoutPage />} />
               <Route path="/dashboard" element={<DashboardPage />} />
-              <Route path="/admin" element={<AdminPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/services" element={<ServicesPage />} />
               <Route path="/contact" element={<ContactPage />} />

@@ -90,14 +90,6 @@ export function Header() {
                     <span>Dashboard</span>
                   </Link>
                 </DropdownMenuItem>
-                {user.role === 'admin' && (
-                  <DropdownMenuItem asChild>
-                    <Link to="/admin" className="cursor-pointer flex w-full items-center">
-                      <Package className="mr-2 h-4 w-4" />
-                      <span>Admin Panel</span>
-                    </Link>
-                  </DropdownMenuItem>
-                )}
                 <DropdownMenuSeparator />
                 <DropdownMenuItem 
                   onClick={logout}
@@ -165,12 +157,6 @@ export function Header() {
             <Link to="/dashboard" className="flex items-center space-x-2" onClick={toggleMenu}>
               <LayoutDashboard className="h-5 w-5 text-purple-600" />
               <span>Dashboard</span>
-            </Link>
-          )}
-          {user && user.role === 'admin' && (
-            <Link to="/admin" className="flex items-center space-x-2" onClick={toggleMenu}>
-              <Package className="h-5 w-5 text-purple-600" />
-              <span>Admin Panel</span>
             </Link>
           )}
         </div>
