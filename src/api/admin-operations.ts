@@ -19,11 +19,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       data,
     });
 
-    if (response.error) {
-      return res.status(500).json({ error: response.error });
+    if (!response || response.error) {
+      const errorMessage = response?.error || "Unknown error occurred";
+      console.error("Error from fine.functions.invoke:", errorMessage);
+      return res.status(500).json({ error: errorMessage });
     }
 
-    return res.status(200).json(response.data);
+    return res.status(200).json(response.data || { message: "Operation completed successfully" });
   } catch (error: any) {
     console.error("Error in admin operations API:", error);
     return res.status(500).json({ error: "Internal server error" });

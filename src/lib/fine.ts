@@ -27,6 +27,28 @@ export const fine: FineClient = {
   },
   functions: {
     invoke: async (functionName, payload) => {
+      if (functionName === "admin-operations") {
+        const { action, adminId, data } = payload;
+        if (!action || !adminId) {
+          return { error: "Missing required parameters", data: null };
+        }
+        switch (action) {
+          case "getUsers":
+            return { error: null, data: { users: [{ id: "1", email: "user1@example.com", role: "user" }] } };
+          case "updateUser":
+            if (!data?.userId || !data?.userData) {
+              return { error: "Missing userId or userData parameters", data: null };
+            }
+            return { error: null, data: { message: `User ${data.userId} updated successfully` } };
+          case "deleteUser":
+            if (!data?.userId) {
+              return { error: "Missing userId parameter", data: null };
+            }
+            return { error: null, data: { message: `User ${data.userId} deleted successfully` } };
+          default:
+            return { error: "Invalid action", data: null };
+        }
+      }
       return { error: null, data: { message: `Mock response for ${functionName}`, payload } };
     },
   },
