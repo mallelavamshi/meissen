@@ -33,11 +33,6 @@ interface AnalysisState {
   setCurrentBatch: (urls: string[]) => void;
   updateResult: (id: string, updatedResult: Partial<AnalysisResult>) => void;
   addResult: (result: AnalysisResult) => void;
-  updateResult: (id, updatedResult) => set((state) => ({
-    results: state.results.map((result) =>
-      result.id === id ? { ...result, ...updatedResult } : result
-    ),
-  })),
   clearResults: () => void;
   setError: (error: string | null) => void;
 }
