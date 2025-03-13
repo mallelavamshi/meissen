@@ -16,7 +16,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const response = await fine.functions.invoke("manage-settings", {
       action,
       adminId,
-      settings,
+      data: { settings },
     });
 
     if (response.error) {
