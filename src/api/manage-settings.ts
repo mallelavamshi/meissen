@@ -1,10 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { FineClient } from "@fine-dev/fine-js";
-
-const fine = new FineClient({
-  apiUrl: process.env.VITE_FINE_API_URL || "https://api.fine.dev",
-  apiKey: process.env.VITE_FINE_API_KEY || "",
-});
+import { fine } from "@/lib/fine";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
