@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const { action, adminId, settings } = req.body;
 
-  if (!action || !adminId) {
+  if (!action || !adminId || (action === "updateSettings" && !settings)) {
     return res.status(400).json({ error: "Missing required parameters" });
   }
 
