@@ -378,7 +378,7 @@ export default function AdminPage() {
             <Card className="border-none shadow-lg">
               <CardHeader className="bg-gradient-to-r from-purple-50 to-blue-50 dark:from-purple-900/10 dark:to-blue-900/10 rounded-t-lg">
                 <CardTitle className="flex justify-between items-center">
-                  <span<span>Manage Users</span>
+                  <span>Manage Users</span>
                   <Button size="sm" className="bg-purple-600 hover:bg-purple-700">
                     <Plus className="h-4 w-4 mr-1" />
                     Add User
